@@ -1,32 +1,23 @@
 /// @description Display Building Menu.
-// Get camera coordinates.
-var _camera_x = camera_get_view_x(view_camera[0]);
-var _camera_y = camera_get_view_y(view_camera[0]);
+// Camera coordinates. Origin middle center.
+var _camera_x = camera_get_view_x(view_camera[0]) + (viewport_width / 2);
+var _camera_y = camera_get_view_y(view_camera[0]) + (viewport_height / 2);
 
-// Get viewport coordinates.
-var _viewport_x = building_id.x - _camera_x;
-var _viewport_y = building_id.y - _camera_y;
-var _viewport_width = camera_get_view_width(view_camera[0]);
-var _viewport_height = camera_get_view_height(view_camera[0]);
-
-// Add menu offsets.
-if (_viewport_x > _viewport_width / 2) {
-	_viewport_x -= menu_x_offset;
+// Update sprite position.
+if (building_id.x > _camera_x){
+	x = building_id.x - menu_x_offset;
 } else {
-	_viewport_x += menu_x_offset;
+	x = building_id.x + menu_x_offset;
 }	
-if (_viewport_y > _viewport_height / 2) {
-	_viewport_y -= menu_y_offset;
+if (building_id.y > _camera_y){
+	y = building_id.y - menu_y_offset;
 } else {
-	_viewport_y += menu_y_offset;
-}	
+	y = building_id.y + menu_y_offset;
+}
 
-// Update sprite location.
-x = _viewport_x;
-y = _viewport_y;
-
-// Draw sprite.
-draw_self();
+// Menu coordinates in viewport.
+var _viewport_x = x - _camera_x + (viewport_width / 2);
+var _viewport_y = y - _camera_y + (viewport_height / 2);
 
 // Show menu title.
 draw_set_halign(fa_center);
