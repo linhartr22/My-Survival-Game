@@ -1,9 +1,11 @@
 /// @description Building Menu Setup.
-//
+// Initialize instance values.
 menu_title = "";
+menu_choices = ["", "", "", "", "", ""];
+
+// Menu dimensions.
 #macro MENU_ROWS 2
 #macro MENU_COLS 3
-menu_choices = ["", "", "", "", "", ""];
 
 // Menu display offset.
 menu_x_offset = sprite_width * 1.25;

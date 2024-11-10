@@ -9,10 +9,10 @@ if (cam_follow != noone) {
 	var _vkey = keyboard_key;
 	//show_debug_message("_vkey: {0}",_vkey);
 	switch (_vkey) {
-	    case ord("A"): cam_to_x = cam_to_x - CAM_X_SPEED; break;
+		case ord("A"): cam_to_x = cam_to_x - CAM_X_SPEED; break;
 	    case ord("W"): cam_to_y = cam_to_y - CAM_Y_SPEED; break;
 	    case ord("S"): cam_to_y = cam_to_y + CAM_Y_SPEED; break;
-	    case ord("D"): cam_to_x = cam_to_x + CAM_X_SPEED; break;	
+	    case ord("D"): cam_to_x = cam_to_x + CAM_X_SPEED; break;
 	}
 }
 // Nudge camera to target location.

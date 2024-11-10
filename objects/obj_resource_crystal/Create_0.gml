@@ -1,14 +1,21 @@
 /// @description Crystal Resource Setup.
-// Get instance values from parent.
-event_inherited()
-// Initialize instance values.
+// Get prototype instance values.
+event_inherited();
+
+// How many units.
+#macro CRYSTALS_BASE 400
+#macro CRYSTALS_MIN -50
+#macro CRYSTALS_MAX +100
+
+#region Revise prototype instance values.
+// Resource type.
 type_num = RESOURCE_TYPES.CRYSTAL;
+
+// Unit name.
 units_name = "Crystals";
-#macro UNITS_BASE 400
-#macro UNITS_LOW -50
-#macro UNITS_HIGH 100
-initial_units = UNITS_BASE+irandom_range(UNITS_LOW, UNITS_HIGH);
+initial_units = CRYSTALS_BASE+irandom_range(CRYSTALS_MIN, CRYSTALS_MAX);
 current_units = initial_units;
 
-// Crystal resource hover sound.
+// Hover sound index.
 hover_sound = asset_get_index("snd_resource_crystal");
+#endregion

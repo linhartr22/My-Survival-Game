@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_resource_crystal",
+  "%Name":"snd_resource_water",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":10.031,
-  "name":"snd_resource_crystal",
+  "duration":45.048,
+  "name":"snd_resource_water",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_resource_crystal.mp3",
+  "soundFile":"snd_resource_water.mp3",
   "type":0,
-  "volume":0.25,
+  "volume":1.0,
 }
