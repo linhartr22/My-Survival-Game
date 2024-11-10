@@ -2,11 +2,13 @@
 // Get camera coordinates.
 var _camera_x = camera_get_view_x(view_camera[0]);
 var _camera_y = camera_get_view_y(view_camera[0]);
+
 // Get viewport coordinates.
-var _viewport_x = x - _camera_x;
-var _viewport_y = y - _camera_y;
+var _viewport_x = building_id.x - _camera_x;
+var _viewport_y = building_id.y - _camera_y;
 var _viewport_width = camera_get_view_width(view_camera[0]);
 var _viewport_height = camera_get_view_height(view_camera[0]);
+
 // Add menu offsets.
 if (_viewport_x > _viewport_width / 2) {
 	_viewport_x -= menu_x_offset;
@@ -18,9 +20,11 @@ if (_viewport_y > _viewport_height / 2) {
 } else {
 	_viewport_y += menu_y_offset;
 }	
+
 // Update sprite location.
 x = _viewport_x;
 y = _viewport_y;
+
 // Draw sprite.
 draw_self();
 

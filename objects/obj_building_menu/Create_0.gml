@@ -1,7 +1,7 @@
 /// @description Building Menu Setup.
-// Initialize instance values.
-menu_title = "";
-menu_choices = ["", "", "", "", "", ""];
+// Parent building id.
+// building_id = -1;
+show_debug_message("Menu building id: {0}",building_id);
 
 // Menu dimensions.
 #macro MENU_ROWS 2
