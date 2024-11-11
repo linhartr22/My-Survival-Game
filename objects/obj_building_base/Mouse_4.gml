@@ -1,13 +1,13 @@
 /// @description Create Base Building Menu.
 // Menu already created?
 if (instance_exists(obj_building_menu)){
-	// Am I using the menu?
+	// Am I already using the menu?
 	if (is_showing_menu){
-		// Yes, I am using the menu.
-		show_debug_message("Object Id {0} says I am using the menu.", id);
+		// Yes.
+		show_debug_message("Object Id {0} says I am already using the menu.", id);
 	} else {
-		// No, Someone else is using the menu.
-		show_debug_message("Object Id {0} says someone else is using the menu.", id);
+		// No.
+		show_debug_message("Object Id {0} says Object Id {1} is using the menu.", id, obj_building_menu.building_id);
 	}
 } else {
 	// Menu already showing?

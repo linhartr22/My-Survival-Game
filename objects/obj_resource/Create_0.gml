@@ -15,6 +15,6 @@ enum RESOURCE_TYPES
 // Hover message.
 hover_msg = "";
 
-// Mouse hover status.
+// Mouse hover statuses.
 was_hovering = false;
 is_hovering = false;
