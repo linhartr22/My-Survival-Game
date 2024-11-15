@@ -1,8 +1,7 @@
 /// @description Show Hover Message.
-/// TODO: Switch to using middle center adjusted camera coordinates.
 // Show hover message?
 if (is_hovering) {
-	// Yes, Get camera coordinates.
+	// Yes, Camera coordinates.
 	var _camera_x = camera_get_view_x(view_camera[0]);
 	var _camera_y = camera_get_view_y(view_camera[0]);
 	
@@ -17,10 +16,10 @@ if (is_hovering) {
 	
 	// Draw bubble.
 	draw_set_colour(c_white);
-	var _bubble_x1 = _viewport_x - _msg_width - RESOURCE_X_MARGIN;
-	var _bubble_x2 = _viewport_x + _msg_width + RESOURCE_X_MARGIN;
-	var _bubble_y1 = _viewport_y - _msg_height - RESOURCE_Y_MARGIN;
-	var _bubble_y2 = _viewport_y + _msg_height + RESOURCE_Y_MARGIN;
+	var _bubble_x1 = _viewport_x + (sprite_width / 2) - _msg_width - RESOURCE_X_MARGIN;
+	var _bubble_x2 = _viewport_x + (sprite_width / 2) + _msg_width + RESOURCE_X_MARGIN;
+	var _bubble_y1 = _viewport_y + (sprite_height / 2) - _msg_height - RESOURCE_Y_MARGIN;
+	var _bubble_y2 = _viewport_y + (sprite_height / 2) + _msg_height + RESOURCE_Y_MARGIN;
 	draw_roundrect(_bubble_x1, _bubble_y1, _bubble_x2, _bubble_y2, false);
 	
 	// Format message.
@@ -30,5 +29,5 @@ if (is_hovering) {
 	draw_set_colour(c_black);
 	
 	// Display message.
-	draw_text(_viewport_x, _viewport_y, hover_msg);
+	draw_text(_viewport_x + (sprite_width / 2), _viewport_y + (sprite_height / 2), hover_msg);
 }

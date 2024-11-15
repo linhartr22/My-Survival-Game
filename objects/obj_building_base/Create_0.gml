@@ -15,3 +15,6 @@ water = 50;
 
 // Hover sound index.
 hover_sound = asset_get_index("snd_building_base");
+
+// Building id. Used by building menu object.
+building_id = id;
