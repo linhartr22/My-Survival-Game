@@ -1,4 +1,4 @@
-/// @description Display Building Menu.
+/// @description Building Menu Draw GUI.
 #region Show Sprite.
 // Camera coordinates.
 var _camera_x = camera_get_view_x(view_camera[0]);
@@ -66,7 +66,7 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 	// Button highlight position.
 	var _button_x = (x - _camera_x) + MENU_BUTTONS_OFFSET_X + (_col * MENU_BUTTON_WIDTH);
 	var _button_y = (y - _camera_y) + MENU_BUTTONS_OFFSET_Y + (_row * MENU_BUTTON_HEIGHT);
-	show_debug_message("button x: {0}\tbutton y: {1}", _button_x, _button_y);
+	//show_debug_message("button x: {0}\tbutton y: {1}", _button_x, _button_y);
 	
 	// Highlight button under mouse.
 	draw_line_width_colour(_button_x, _button_y, _button_x + MENU_BUTTON_WIDTH, _button_y, 3, c_blue, c_blue);
@@ -78,5 +78,4 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 	// No, Update mouse button hover memory.
 	button_current = -1;
 }
-show_debug_message("");
 #endregion

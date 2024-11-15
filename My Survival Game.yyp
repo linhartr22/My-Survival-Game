@@ -48,6 +48,7 @@
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},
     {"id":{"name":"snd_building_base","path":"sounds/snd_building_base/snd_building_base.yy",},},
     {"id":{"name":"snd_menu_button_hover","path":"sounds/snd_menu_button_hover/snd_menu_button_hover.yy",},},
+    {"id":{"name":"snd_mouse_click","path":"sounds/snd_mouse_click/snd_mouse_click.yy",},},
     {"id":{"name":"snd_resource_crystal","path":"sounds/snd_resource_crystal/snd_resource_crystal.yy",},},
     {"id":{"name":"snd_resource_water","path":"sounds/snd_resource_water/snd_resource_water.yy",},},
     {"id":{"name":"spr_building_base","path":"sprites/spr_building_base/spr_building_base.yy",},},
