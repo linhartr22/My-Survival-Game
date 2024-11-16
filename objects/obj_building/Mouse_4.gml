@@ -19,6 +19,7 @@ if (instance_exists(obj_building_menu)){
 			building_id : building_id,
 			menu_title : menu_title,
 			menu_choices : menu_choices,
+			menu_hover : menu_hover,
 		});
 	}
 }

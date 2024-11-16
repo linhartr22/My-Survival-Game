@@ -41,7 +41,7 @@ for (var _row = 0; _row < MENU_ROWS; _row++){
 	for (var _col = 0; _col < MENU_COLS; _col++){
 		var _xc = _viewport_x + MENU_BUTTONS_OFFSET_X + (_col * MENU_BUTTON_WIDTH) + (MENU_BUTTON_WIDTH / 2);
 		var _yc = _viewport_y + MENU_BUTTONS_OFFSET_Y + (_row * MENU_BUTTON_HEIGHT);
-		draw_text_transformed(_xc, _yc, menu_choices[(_row * 3) + _col], 2, 1.25, 0);
+		draw_text_transformed(_xc, _yc, menu_choices[(_row * 3) + _col], 1.25, 1.2, 0);
 	}
 }
 #endregion
@@ -74,6 +74,29 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 	draw_line_width_colour(_button_x + MENU_BUTTON_WIDTH, _button_y + MENU_BUTTON_HEIGHT, _button_x, _button_y + MENU_BUTTON_HEIGHT, 3, c_blue, c_blue);
 	draw_line_width_colour(_button_x, _button_y + MENU_BUTTON_HEIGHT, _button_x, _button_y, 3, c_blue, c_blue);
 	
+	// Display menu button hover text.
+	if (menu_hover[button_current] != "") {
+		// Message dimensions.
+		var _msg_width = string_width(menu_hover[button_current]) / 2;
+		var _msg_height = string_height(menu_hover[button_current]) / 2;
+	
+		// Draw bubble.
+		draw_set_colour(c_white);
+		var _bubble_x1 = _viewport_x + (sprite_width * 0.5) - _msg_width - BUILDING_X_MARGIN;
+		var _bubble_x2 = _viewport_x + (sprite_width * 0.5) + _msg_width + BUILDING_X_MARGIN;
+		var _bubble_y1 = _viewport_y - (sprite_height * 0.25) - _msg_height - BUILDING_Y_MARGIN;
+		var _bubble_y2 = _viewport_y - (sprite_height * 0.25) + _msg_height + BUILDING_Y_MARGIN;
+		draw_roundrect(_bubble_x1, _bubble_y1, _bubble_x2, _bubble_y2, false);
+	
+		// Format message.
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_top);
+		draw_set_font(fnt_hover);
+		draw_set_colour(c_black);
+	
+		// Display message.
+		draw_text(_viewport_x + (sprite_width * 0.5), _viewport_y - (sprite_height * 0.25) - _msg_height, menu_hover[button_current]);
+	}
 } else {
 	// No, Update mouse button hover memory.
 	button_current = -1;

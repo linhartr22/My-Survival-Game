@@ -16,4 +16,3 @@ if (was_hovering != is_hovering) {
 	// Save mouse hovering state.
 	was_hovering = is_hovering;
 }
-

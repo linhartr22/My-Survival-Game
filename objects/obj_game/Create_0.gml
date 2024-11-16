@@ -1,3 +1,3 @@
 /// @description Game Setup.
 // Set default audio volume.
-audio_master_gain(0);
+audio_master_gain(0.5);

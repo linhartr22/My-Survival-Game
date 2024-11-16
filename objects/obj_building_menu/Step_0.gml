@@ -1,9 +1,4 @@
 /// @description Building Menu Step Event.
-// Exit menu.
-if (keyboard_key = vk_escape){
-	instance_destroy(self);
-}
-
 // Start menu button hover sound?
 if (button_current != button_last){
 	//Yes.
