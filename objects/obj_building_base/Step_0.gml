@@ -11,12 +11,12 @@ if (is_showing_menu) {
 	}
 }
 
-// Any bots in the queue and timer inactive?
+// Any bots in the queue and build timer inactive?
 if ((base_bot_q > 0) && (alarm[0] = -1)){
-	// Start timer.
+	// Start build timer.
 	alarm[0] = (BOT_BUILD_TIME * 60);
 	
-	// Create building progress object.
+	// Create building in progress indicator.
 	var _bp_x = (x + (sprite_width / 2)) - (64 / 2);
 	var _bp_y = (y + sprite_height) - (64 * 1.5); 
 	my_bp = instance_create_layer(_bp_x, _bp_y, "Menus", obj_building_progress);

@@ -14,17 +14,11 @@
 menu_x_offset = -8;
 menu_y_offset = -8;
 
-// Camera viewport size.
-viewport_width = camera_get_view_width(view_camera[0]);
-viewport_height = camera_get_view_height(view_camera[0]);
-
-// Mouse hover memory.
-was_hovering = false;
+// Mouse hovering state.
 is_hovering = false;
 
-// Mouse button hover memory.
-hover_button_current = -1;
-hover_button_last = hover_button_current;
+// Button mouse is hovering.
+hover_button = -1;
 
 // Last building menu button pressed.
 building_menu_button = -1

@@ -1,20 +1,15 @@
 /// @description Prototype Resource Setup.
 /// Child objects will inherit this event, as first step in their create event.
-// Values used for type_num.
-enum RESOURCE_TYPES
-{
+// Values for resource type_num.
+enum RESOURCE_TYPES {
 	CRYSTAL,
 	WATER,
 	METHANE
 }
 
-// Hover bubble margins.
+// Hover message bubble margins.
 #macro RESOURCE_X_MARGIN 10
 #macro RESOURCE_Y_MARGIN 5
 
-// Hover message.
-hover_msg = "";
-
-// Mouse hover statuses.
-was_hovering = false;
+// Mouse hovering state.
 is_hovering = false;
