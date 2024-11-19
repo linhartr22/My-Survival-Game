@@ -17,5 +17,5 @@ units_name = "Barrels";
 initial_units = WATER_BASE + irandom_range(WATER_MIN, WATER_MAX);
 current_units = initial_units;
 
-// Hover sound index.
-hover_sound = asset_get_index("snd_resource_water");
+// Hover sound index. Used by parent object.
+hover_sound = snd_resource_water;

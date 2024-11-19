@@ -4,4 +4,3 @@ hover_msg = string("=== Inventory ===\nCrystal: {0} crystals\nWater: {1} barrels
 	
 // Parent takes it from here.
 event_inherited();
-

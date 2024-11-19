@@ -11,7 +11,7 @@ if (building_menu_button == -1) {
 	var _btn = (_row * MENU_COLS) + _col;
 	if (_btn < 0) {_btn = 0;}
 	if (_btn >= (MENU_COLS * MENU_ROWS)) {_btn = (MENU_COLS * MENU_ROWS) - 1;}
-	show_debug_message("clicked row: {0}\tclicked col: {1}", _row, _col);
+	//show_debug_message("clicked row: {0}\tclicked col: {1}", _row, _col);
 	show_debug_message("button: {0}", _btn);
 
 	// Update last button clicked

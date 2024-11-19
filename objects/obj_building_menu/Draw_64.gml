@@ -1,12 +1,12 @@
 /// @description Building Menu Draw GUI.
-#region Show Sprite.
+#region Update Building Menu Location.
 // Camera coordinates.
 var _camera_x = camera_get_view_x(view_camera[0]);
 var _camera_y = camera_get_view_y(view_camera[0]);
 //show_debug_message("camera   x: {0}\t  camera y: {1}", _camera_x, _camera_y);
 //show_debug_message("building x: {0}\tbuilding y: {1}", building_id.x, building_id.y);
 
-// Is the building on the left half of the camera?
+// Is the building in the left half of the camera?
 if (building_id.x > _camera_x + (viewport_width / 2)){
 	// Yes.
 	x = building_id.x - sprite_width - menu_x_offset;
@@ -14,7 +14,7 @@ if (building_id.x > _camera_x + (viewport_width / 2)){
 	// No, right half.
 	x = building_id.x + building_id.sprite_width + menu_x_offset;
 }
-// Is the building on the top half of the camera?
+// Is the building in the top half of the camera?
 if (building_id.y > _camera_y + (viewport_height / 2)){
 	// Yes.
 	y = building_id.y - sprite_height - menu_y_offset;
@@ -23,7 +23,9 @@ if (building_id.y > _camera_y + (viewport_height / 2)){
 	y = building_id.y + building_id.sprite_height + menu_y_offset;
 }
 //show_debug_message("menu x: {0}\tmenu y: {1}", x, y);
+#endregion
 
+#region Update Building Menu Text.
 // GUI coordinates in viewport.
 var _viewport_x = x - _camera_x;
 var _viewport_y = y - _camera_y;
@@ -46,7 +48,7 @@ for (var _row = 0; _row < MENU_ROWS; _row++){
 }
 #endregion
 
-#region Mouse Button Select.
+#region Building Menu Button Hover.
 // Mouse location relative to sprite.
 var _mouse_view_x = window_view_mouse_get_x(0) - x;
 var _mouse_view_y = window_view_mouse_get_y(0) - y;
@@ -61,7 +63,7 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 	//show_debug_message("row: {0}\tcol: {1}", _row, _col);
 	
 	// Update mouse button hover memory.
-	button_current = (_row * MENU_COLS) + _col;
+	hover_button_current = (_row * MENU_COLS) + _col;
 	
 	// Button highlight position.
 	var _button_x = (x - _camera_x) + MENU_BUTTONS_OFFSET_X + (_col * MENU_BUTTON_WIDTH);
@@ -75,10 +77,10 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 	draw_line_width_colour(_button_x, _button_y + MENU_BUTTON_HEIGHT, _button_x, _button_y, 3, c_blue, c_blue);
 	
 	// Display menu button hover text.
-	if (menu_hover[button_current] != "") {
+	if (menu_hover[hover_button_current] != "") {
 		// Message dimensions.
-		var _msg_width = string_width(menu_hover[button_current]) / 2;
-		var _msg_height = string_height(menu_hover[button_current]) / 2;
+		var _msg_width = string_width(menu_hover[hover_button_current]) / 2;
+		var _msg_height = string_height(menu_hover[hover_button_current]) / 2;
 	
 		// Draw bubble.
 		draw_set_colour(c_white);
@@ -95,10 +97,16 @@ if ((_mouse_view_x >= MENU_BUTTONS_OFFSET_X) && (_mouse_view_x < sprite_width) &
 		draw_set_colour(c_black);
 	
 		// Display message.
-		draw_text(_viewport_x + (sprite_width * 0.5), _viewport_y - (sprite_height * 0.25) - _msg_height, menu_hover[button_current]);
+		draw_text(_viewport_x + (sprite_width * 0.5), _viewport_y - (sprite_height * 0.25) - _msg_height, menu_hover[hover_button_current]);
+	}
+	
+	// Display rally point icon?
+	if (hover_button_current = 4) {
+		// Yes, Display rally point icon.
+		draw_sprite(spr_building_rally, 0, building_id.rally_x, building_id.rally_y);
 	}
 } else {
 	// No, Update mouse button hover memory.
-	button_current = -1;
+	hover_button_current = -1;
 }
 #endregion

@@ -17,5 +17,5 @@ units_name = "Crystals";
 initial_units = CRYSTALS_BASE + irandom_range(CRYSTALS_MIN, CRYSTALS_MAX);
 current_units = initial_units;
 
-// Hover sound index.
-hover_sound = asset_get_index("snd_resource_crystal");
+// Hover sound index. Used by parent object.
+hover_sound = snd_resource_crystal;

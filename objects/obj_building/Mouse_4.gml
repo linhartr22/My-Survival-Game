@@ -18,8 +18,8 @@ if (instance_exists(obj_building_menu)){
 		instance_create_layer(x, y, "Menus", obj_building_menu,{
 			building_id : building_id,
 			menu_title : menu_title,
-			menu_choices : menu_choices,
-			menu_hover : menu_hover,
+			menu_choices : menu_choices,	// Can't put arrays in object's Variable Definitions. Ignore Feather.
+			menu_hover : menu_hover,		// Can't put arrays in object's Variable Definitions. Ignore Feather.
 		});
 	}
 }

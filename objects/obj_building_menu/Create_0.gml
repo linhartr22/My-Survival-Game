@@ -1,9 +1,10 @@
 /// @description Building Menu Setup.
-// Menu dimensions.
+// Menu size.
 #macro MENU_ROWS 2
 #macro MENU_COLS 3
 
 // Menu buttons.
+#macro MENU_BUTTONS MENU_ROWS * MENU_COLS
 #macro MENU_BUTTONS_OFFSET_X 0
 #macro MENU_BUTTONS_OFFSET_Y 32
 #macro MENU_BUTTON_WIDTH 64
@@ -22,8 +23,8 @@ was_hovering = false;
 is_hovering = false;
 
 // Mouse button hover memory.
-button_current = -1;
-button_last = button_current;
+hover_button_current = -1;
+hover_button_last = hover_button_current;
 
 // Last building menu button pressed.
 building_menu_button = -1
